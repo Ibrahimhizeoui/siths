@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const request = require('request');
-const callbackUrl = 'http://localhost:3000/test';
-const ApiHostname = 'https://client.grandid.com';
-const apiKey='73f9b0dac47004556036f77d1b2c743e';
-const authenticateServiceKey='cb8bb8e580e7d9e7d586fe64fd3980b9';
+require('dotenv').config()
+const callbackUrl = process.env.callbackUrl;
+const ApiHostname = process.env.ApiHostname;
+const apiKey= process.env.apiKey;
+const authenticateServiceKey= process.env.authenticateServiceKey;
 //const callbackUrl = "";
 /* GET home page. */
 router.get('/', function(req, res, next) {
